@@ -37,7 +37,7 @@ Tests verify:
 
 - **FPA (First-Price Auction)**: When both players have equal values (50, 50), we observe multiple equilibria including (48, 48), (49, 49), and (50, 50). This occurs because when values are equal, any symmetric bid profile where both players bid the same amount between 0 and their value can be an equilibrium - neither player can profitably deviate by bidding slightly more or less if it results in a loss or no gain.
 
-- **SPA (Second-Price Auction)**: We observe thousands of equilibria. For example, with values (49, 50), we found over 5,000 equilibria. This is theoretically expected because in second-price auctions, bidding your true value (or higher) is a weakly dominant strategy. Any combination where both players bid at or above their values forms an equilibrium.
+- **SPA (Second-Price Auction)**: We observe thousands of equilibria. For example, with values (49, 50), we found over 5,000 equilibria. This is theoretically expected because in second-price auctions, bidding your true value (or higher) is a weakly dominant strategy. Any combination where both players bid at or above their values forms an equilibrium. Because the bid doesn't affect the price (unless it changes who wins), there are infinite ways to "threaten" other bidders by bidding extremely high or low, creating "bad" equilibria where the highest-value person doesn't even win. Another example could be if the item is 100 CHF and a bidder bids 5000 CHF and the another bids 0 CHF. Bidder 1 doesn't want to change (they won for free). Bidder 2 doesn't want to change because to win, they would have to bid over $1,000,000, which is more than the item is worth. In SPA therefore, many more possibilities exist as there is no trade-off compared to FPA.
 
 ### Do the equilibria differ between FPA and SPA?
 
@@ -48,8 +48,8 @@ Tests verify:
    - SPA has many equilibria (thousands in our results)
 
 2. **Bidding behavior**:
-   - **FPA**: Players bid at or slightly below their values. There's strategic underbidding to maximize profit margin (value minus payment). Bidding exactly at value yields zero profit when winning.
-   - **SPA**: Many equilibria include bids at or above true values. Since winners pay the second-highest bid, there's no penalty for overbidding as long as you win.
+   - **FPA**: Players face a trade-off between bidding and their own profit and often bid at or slightly below their values. There's strategic underbidding to maximize profit margin (value minus payment). Bidding exactly at value yields zero profit when winning.
+   - **SPA**: Many equilibria include bids at or above true values. Since winners pay the second-highest bid, there's no penalty for overbidding as long as you win. As mentioned before, there are infinite ways to threaten other bidders by bidding extremly high without risking any loss of profit.
 
 3. **Winner determination**:
    - **FPA with asymmetric values**: The higher-value player typically wins by bidding more aggressively
